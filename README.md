@@ -1,30 +1,28 @@
-# Change Order Module (2017)
+# Change Order Module (2019)
 
-![demo](/img/Splitting_Orders_Diagram_.png)
+![demo](/img/port_change_order.jpg)
 
 ## Requirement
 
+Built Change Order module using SuiteScript 2.0
+
 ```bash
-- Restlet on N_B
-  Create a sales order from N_A
-
-- Userevent Script on N_B
-  UE on ItemFulfillment (of N_B) and send item fulfillment info to N_A to mark as Shipped SO on N_A and send tracking numbers, notify customer
-
-- Scheduled Script on N_A
-  Check not submitted purchase orders (of N_A) and send salesorder info to N_B
-
-- Userevent Script on N_A
-  Userevent on purchase order (of N_A) and send salesorder info to N_B
+Construction company issues Sales Orders for Contract Totals under Projects,
+customer needs a way to capture Change Orders within NetSuite system that will be created
+independently of Sales Orders, but lines will be loaded into Sales Orders upon Approval.
+Create a custom transaction to be tracked and associated with Projects
+Change Order Needs to be a sub-record associated with Sales Orders
+i.e. need to have the ability to choose a Sales Order within a Project after selecting
+the Project after selecting the customer
+Custom transaction name: Change Order
 
 ```
 
-## Source Scripts
+## Running Result
 
-1. [Restlet on N_B](/scripts/Restlet_Create_SO.js)
-
-2. [Userevent Script on N_B](/scripts/UE_CS_IF.js)
-
-3. [Scheduled Script on N_A](/scripts/SCH_PC_PO.js)
-
-4. [Userevent Script on N_A](/scripts/UE_PC_PO_send_SO_Info.js)
+![demo](/img/screenshot_20190607_231921.jpg)
+![demo](/img/screenshot_20190607_232028.jpg)
+![demo](/img/screenshot_20190607_234624.jpg)
+![demo](/img/screenshot_20190607_234625.jpg)
+![demo](/img/screenshot_20190608_001740.jpg)
+![demo](/img/screenshot_20190608_001830.jpg)
